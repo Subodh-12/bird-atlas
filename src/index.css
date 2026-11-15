@@ -1,5 +1,7 @@
+@import "./styles/tokens.css";
+
 /* ========================================
-   1. CSS RESET
+   1. RESET
 ======================================== */
 
 *,
@@ -20,15 +22,52 @@ body {
   min-height: 100vh;
 }
 
+/* ========================================
+   2. APPLICATION FOUNDATION
+======================================== */
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background: var(--color-cream);
+}
+
+/* ========================================
+   3. TYPOGRAPHY
+======================================== */
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+  margin-top: 0;
+  font-family: var(--font-family-display);
+  color: var(--color-text-primary);
+}
+
 p {
   margin-top: 0;
 }
+
+code {
+  font-family: var(--font-family-mono);
+}
+
+/* ========================================
+   4. MEDIA
+======================================== */
 
 img,
 picture,
@@ -38,6 +77,10 @@ svg {
   display: block;
   max-width: 100%;
 }
+
+/* ========================================
+   5. FORM ELEMENTS
+======================================== */
 
 button,
 input,
@@ -54,54 +97,8 @@ button:disabled {
   cursor: not-allowed;
 }
 
-a {
-  color: inherit;
-}
-
-ul,
-ol {
-  padding-left: 1.5rem;
-}
-
 /* ========================================
-   2. TEMPORARY STARTER COMPATIBILITY
-   Existing App.css uses these variables.
-   They will be replaced by design tokens
-   in the next milestone.
-======================================== */
-
-:root {
-  color-scheme: light;
-
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #ffffff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-
-  --accent: #aa3bff;
-  --accent-bg: rgb(170 59 255 / 10%);
-  --accent-border: rgb(170 59 255 / 50%);
-  --social-bg: rgb(244 243 236 / 50%);
-
-  --shadow: rgb(0 0 0 / 10%) 0 10px 15px -3px, rgb(0 0 0 / 5%) 0 4px 6px -2px;
-
-  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
-  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 16px / 1.5 var(--sans);
-  color: var(--text);
-  background: var(--bg);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* ========================================
-   3. APPLICATION ROOT
+   6. APPLICATION ROOT
 ======================================== */
 
 #root {
@@ -109,44 +106,26 @@ ol {
 }
 
 /* ========================================
-   4. GLOBAL TYPOGRAPHY
+   7. ACCESSIBILITY
 ======================================== */
 
-body {
-  font-family: var(--sans);
-  line-height: 1.5;
+a {
+  color: inherit;
 }
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-p {
-  margin-bottom: 0;
-}
-
-code {
-  font-family: var(--mono);
-}
-
-/* ========================================
-   5. INTERACTION AND ACCESSIBILITY
-======================================== */
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--color-focus);
   outline-offset: 3px;
 }
 
 ::selection {
-  color: var(--text-h);
-  background: var(--accent-bg);
+  color: var(--color-text-inverse);
+  background: var(--color-forest);
 }
 
-/* Respect reduced-motion preferences */
+/* ========================================
+   8. MOTION PREFERENCES
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
   html {
