@@ -6,7 +6,6 @@ export interface NavigationItem {
   label: string;
   href: string;
   icon: LucideIcon;
-  activeByDefault?: boolean;
 }
 
 export const navigationItems: NavigationItem[] = [
@@ -14,7 +13,6 @@ export const navigationItems: NavigationItem[] = [
     label: "Explore",
     href: "#catalogue",
     icon: Compass,
-    activeByDefault: true,
   },
   {
     label: "Search",
