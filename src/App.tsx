@@ -3,7 +3,7 @@ import { useState } from "react";
 import heroImg from "./assets/hero.png";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
-
+import { MobileBottomNav } from "./components/layout/MobileBottomNav";
 import { SiteHeader } from "./components/layout/SiteHeader";
 import "./App.css";
 
@@ -14,6 +14,7 @@ function App() {
     <>
       {/* Application navigation */}
       <SiteHeader />
+      <MobileBottomNav />
 
       {/* Temporary Vite starter content */}
       <section id="center">
